@@ -1,0 +1,17 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env  # Grabs your MongoDB URI and Stripe keys
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./frontend/.env # Grabs your VITE_ Stripe keys
+    depends_on:
+      - backend         # Tells Docker to wait for the backend to start first
