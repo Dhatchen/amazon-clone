@@ -1,5 +1,4 @@
 require('dotenv').config({ path: './.env' });
-const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const Product = require('./models/Product');
 const User = require('./models/User');

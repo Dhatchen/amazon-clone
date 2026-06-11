@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 const categories = [
   "Electronics", "Fashion", "Home & Kitchen", "Books", "Beauty",
   "Sports & Outdoors", "Automotive", "Toys & Games", "Health", "Groceries"

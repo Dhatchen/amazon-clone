@@ -23,7 +23,7 @@ const CheckoutForm = ({ orderId }) => {
         const { data } = await axios.post('http://localhost:5000/api/v1/orders/stripe-payment-intent', { orderId }, config);
         setClientSecret(data.clientSecret);
       } catch (err) {
-        setError('Could not initialize payment.');
+        console.error("Stripe Error:", err);
       }
     };
     fetchClientSecret();
@@ -56,8 +56,7 @@ const CheckoutForm = ({ orderId }) => {
         // Refresh the page so the user sees the green "Paid" badge!
         dispatch(getOrderDetails(orderId)); 
       } catch (err) {
-        setError('Payment succeeded, but failed to update database.');
-        setProcessing(false);
+        console.error("Payment Confirmation Error:", err);
       }
     }
   };

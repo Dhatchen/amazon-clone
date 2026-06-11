@@ -32,6 +32,7 @@ exports.protect = async (req, res, next) => {
     // 5. Move on to the actual controller function (createOrder)
     next();
   } catch (error) {
+    console.error(error);
     return res.status(401).json({ 
       success: false, 
       message: 'Token is invalid or expired. Please log in again.' 

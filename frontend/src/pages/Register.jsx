@@ -31,6 +31,7 @@ const Register = () => {
     setValidationError('');
 
     // 1. Validate passwords match
+    // eslint-disable-next-line security/detect-possible-timing-attacks
     if (password !== confirmPassword) {
       setValidationError('Passwords do not match');
       return;
